@@ -4,9 +4,31 @@ IndividualTrip::IndividualTrip(std::string id, std::string driver, int distance,
 
 IndividualTrip::~IndividualTrip()
 {
-    std::cout << "Dest\n";
+    std::cout << "Individual\n";
 };
 
-float IndividualTrip::calculateFare(){
-    
+float IndividualTrip::calculateFare()
+{
+    float fare = getTripDistance() * getTripVehicleType();
+    fare = fare + 0.18 * fare;
+    return fare;
+}
+
+float IndividualTrip::calculateFare(float surge)
+{
+    float fare = (getTripDistance() * getTripVehicleType()) + (getIndividualTripDuration() * surge);
+    fare = fare + 0.18 * fare;
+    return fare;
+}
+
+bool IndividualTrip::isTripAsPerStandard()
+{
+    if (getTripRating() >= 3 && (getIndividualTripDuration() <= 3 * getTripDistance()))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }

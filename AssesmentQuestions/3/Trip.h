@@ -1,6 +1,6 @@
 #ifndef TRIP_H
 #define TRIP_H
-#include<iostream>
+#include <iostream>
 #include "VehicleType.h"
 
 class Trip
@@ -11,8 +11,9 @@ private:
     int tripDistance;
     int tripRating;
     enum VehicleType tripVehicleType;
+
 public:
-    Trip(std::string id,std::string driver, int distance,int rating,enum VehicleType);
+    Trip(std::string id, std::string driver, int distance, int rating, enum VehicleType);
     virtual ~Trip();
 
     std::string getTripId() const { return tripId; }
@@ -27,15 +28,42 @@ public:
     int getTripRating() const { return tripRating; }
     void setTripRating(int tripRating_) { tripRating = tripRating_; }
 
-    std::string getTripVehicleType();
-    std::string setTripVehicleType(enum VehicleType);
+    int getTripVehicleType()
+    {
+        if (tripVehicleType == REGULAR)
+        {
+            return 25;
+        }
+        else if (tripVehicleType == COMFORT)
+        {
+            return 30;
+        }
+        else
+        {
+            return 50;
+        }
+    };
+    void setTripVehicleType(enum VehicleType types)
+    {
+        if (types == REGULAR)
+        {
+            this->tripVehicleType = REGULAR;
+        }
+        else if (types == COMFORT)
+        {
+            this->tripVehicleType = COMFORT;
+        }
+        else
+        {
+            this->tripVehicleType = PREMIUM;
+        }
+    }
 
     virtual float calculateFare() = 0;
 
     virtual float calculateFare(float surge) = 0;
 
-    virtual bool isTripAsPerStandard()=0;
-
+    virtual bool isTripAsPerStandard() = 0;
 };
 
 #endif
