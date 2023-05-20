@@ -1,0 +1,35 @@
+     
+                FARE CALCULATION
+-------------------------------------------
+
+-------------INDIVIDUAL TRIP-----------------------
+
+x = d*factor + t*surge%
+surge = x + 18% of x
+
+no surcharge = d * factor
+
+
+---------SHARED TRIP-----------
+
+n = number of passengers
+Fare =  [Basefare + 18% of fare ] 
+
+BaseFare= d*factor
+
+shared_fare = Fare/n;
+---------------------------------------
+
+                TRIP STANDARD
+----------------------------------------------
+
+----------INDIVIDUAL TRIP--------------
+
+REGULAR trip == tripRating >= 3 && tripDuration <= 3*tripDistance
+Comfort trip == tripRating >= 4 && tripDuration <= 3*tripDistance
+Premium trip == tripRating >= 4 && tripDuration <= 4*tripDistance
+
+--------------SHARED TRIP--------------
+REGULAR trip = tripRating >=3
+Comfort trip = tripRating >=4
+Premium trip = tripRating >=4
