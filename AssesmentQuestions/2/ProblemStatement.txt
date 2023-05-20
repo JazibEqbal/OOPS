@@ -1,0 +1,27 @@
+Problem Statement: Movie Show Management System
+
+A major movie multiplex brand wants to develop a system to track the movies listed/shown at different multiplexes in their chain. 
+After discussion among major stakeholders, following major business requirements have been outlined.
+
+    • For every new movie released or to be released, the operations team should be able to create a record(object) 
+      that includes essential movie details including but not limited to
+        ◦ Movie name of type string
+        ◦ Movie ID of type string
+        ◦ Movie director.
+        ◦ Movie rating(U, U/A, R, or  A). Rating must be one of the mentioned categories only.
+        ◦ Movie run time in Minutes.
+        ◦ Names of cast members(Hint: An array might be a good option).
+        ◦ An ID for the movie that can be integer or alphanumeric as well.
+        ◦ Total number of seats available for the movie on a given day in 1 multiplex.
+    • There should be an option for the operations team to book tickets for a movie by passing the movie name and time slot. 
+    Hint: Use numbers 1 , 2 or 3 to indicate Show 1, Show 2 and Show 3) for a given day.
+    Upon booking, the count of available seats for the movie must reduce accordingly.
+
+    • System should include functionalities (functions) 
+        ◦ To get details about a movie by passing the movie ID.
+        ◦ To fetch the average price of movie tickets of a particular movie.
+        ◦ To show a menu that lists all functionalities including registration of a new movie.
+
+Notes:
+    1. This is a list of requirements and the system needs to be designed to include solutions for each point mentioned above.
+    2. Grading and evaluation will be based on correct selection and implementation of concepts.
