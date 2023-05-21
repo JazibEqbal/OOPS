@@ -14,7 +14,7 @@ After discussion among major stakeholders, following major business requirements
         ◦ An ID for the movie that can be integer or alphanumeric as well.
         ◦ Total number of seats available for the movie on a given day in 1 multiplex.
     • There should be an option for the operations team to book tickets for a movie by passing the movie name and time slot. 
-    Hint: Use numbers 1 , 2 or 3 to indicate Show 1, Show 2 and Show 3) for a given day.
+    Hint: Use numbers 1 , 2 or 3 to indicate Show 1, Show 2 and Show 3 for a given day.
     Upon booking, the count of available seats for the movie must reduce accordingly.
 
     • System should include functionalities (functions) 
