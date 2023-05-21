@@ -23,9 +23,17 @@ float IndividualTrip::calculateFare(float surge)
 
 bool IndividualTrip::isTripAsPerStandard()
 {
-    if (getTripRating() >= 3 && (getIndividualTripDuration() <= 3 * getTripDistance()))
+    if (getTripVehicleType() == REGULAR)
     {
-        return true;
+        return (getTripRating() >= 3 && (getIndividualTripDuration() <= 3 * getTripDistance()));
+    }
+    else if (getTripVehicleType() == COMFORT)
+    {
+        return (getTripRating() >= 4 && (getIndividualTripDuration() <= 3 * getTripDistance()));
+    }
+    else if (getTripVehicleType() == PREMIUM)
+    {
+        return (getTripRating() >= 4 && (getIndividualTripDuration() <= 4 * getTripDistance()));
     }
     else
     {
