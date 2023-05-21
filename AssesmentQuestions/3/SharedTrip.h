@@ -6,7 +6,6 @@ class SharedTrip : public Trip
 private:
     int individualTripDuration;
     int numberOfPassengers;
-
 public:
     SharedTrip(std::string id, std::string driver, int distance, int rating, enum VehicleType, int tripDuration, int passengers);
     ~SharedTrip();

@@ -1,11 +1,11 @@
 #include "Movie.h"
 
-Movie::Movie()
+Movie::Movie(std::string *members)
 {
- 
+
 }
 
 Movie::~Movie()
 {
-    std::cout<<"des";
+    std::cout<<"des\n";
 }

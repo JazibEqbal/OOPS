@@ -27,9 +27,17 @@ float SharedTrip::calculateFare(float surge)
 
 bool SharedTrip::isTripAsPerStandard()
 {
-    if (getTripRating() >= 3)
+    if (getTripVehicleType() == REGULAR)
     {
-        return true;
+        return (getTripRating() >= 3);
+    }
+    else if (getTripVehicleType() >= COMFORT)
+    {
+        return (getTripRating() >= 4);
+    }
+    else if (getTripVehicleType() == PREMIUM)
+    {
+        return (getTripRating() >= 4);
     }
     else
     {
