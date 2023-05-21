@@ -19,6 +19,7 @@ public:
     Complex operator++();
     Complex operator++(int);
     Complex operator-();
+    friend std::ostream & operator<<(std::ostream &os, Complex &c1);
     void printValues();
 };
 
@@ -84,7 +85,7 @@ Complex operator-=(Complex &c1, const Complex &c2){
     temp.imaginary = c1.imaginary - c2.imaginary;
     return temp;
 }
-//OPERATOR ++
+// OPERATOR ++
 Complex Complex::operator++(){
     Complex temp;
     temp.real = ++real;
@@ -105,6 +106,12 @@ Complex Complex::operator-(){
     temp.imaginary = -imaginary;
     return temp;
 }
+//OPERATOR <<
+std::ostream &operator<<(std::ostream &os, Complex &c)
+{
+    os<<c.real<<"+"<<c.imaginary<<"i";
+    return os;
+}
 //DISPLAY FUNCTION
 void Complex::printValues()
 {
@@ -118,7 +125,8 @@ int main()
     Complex c2(7, 8);
     //c2.printValues();
     Complex c3 = -c1;
-    c3.printValues();
+    //c3.printValues();
+    std::cout<<c3;
     // Complex c4;
     // c4= c1 -= c2;   //calling operator += method here
     // c4.printValues();   
