@@ -11,10 +11,10 @@ private:
     std::string movieDirector;
     enum Rating movieRating;
     int movieRunTime;
-    std::string *castMembers;
+    std::string *castMembers[20];
     int totalNumberOfSeats;
 public:
-    Movie(std::string *members);
+    Movie();
     ~Movie();
 
     std::string* getCastMembers() const {
