@@ -1,20 +1,21 @@
 #ifndef BIKE_H
 #define BIKE_H
 #include<iostream>
+#include "BikeTypes.h"
+#include "Vehicle.h"
 
-class Bike{
+class Bike : public Vehicle
+{
 private:
-    long chassisNumber;
-    std::string vehicleBrand;
-    float exShowroomPrice;
-    int numberOfSeats;
-    float tax;
-    float insuranceAmount;
-    enum BikeTypes bikeTypes;
+    enum class BikeTypes bikeTypes;
 public:
     Bike() = delete;
     Bike(const Bike &obj) = default;
-    
+    Bike(int chasNumber, std::string brand, float showroomPrice, float tax, float insureAmount, enum class BikeTypes types);
+    ~Bike();
+
+    std::string getBikeTypes();
+    void setBikeTypes(enum class BikeTypes types);
 
 };
 
