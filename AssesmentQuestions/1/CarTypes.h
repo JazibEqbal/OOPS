@@ -1,7 +1,7 @@
 #ifndef CARTYPES_H
 #define CARTYPES_H
 
-enum CarTypes
+enum class CarTypes : int
 {
     SUV,
     HATCHBACK,

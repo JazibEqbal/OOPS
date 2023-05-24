@@ -1,6 +1,7 @@
 Case Study: Vehicle Inventory Management System
 
-A major vehicle dealer wants to develop a system to track the inventory of vehicles their chain of showrooms sells on a national level. After discussion among major stakeholders, following major business requirements have been outlined.
+A major vehicle dealer wants to develop a system to track the inventory of vehicles their chain of showrooms sells on a national level.
+After discussion among major stakeholders, following major business requirements have been outlined.
 
     • 2 major classes of Vehicles Car and Bike need to be tracked.
     • Car category may be of types SUV, HatchBack, Sedan , etc

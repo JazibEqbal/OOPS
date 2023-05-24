@@ -2,33 +2,24 @@
 #define CAR_H
 #include "CarTypes.h"
 #include <iostream>
+#include "Vehicle.h"
 
-class Car
+class Car : public Vehicle
 {
 private:
-    int chassisNumber;
-    std::string vehicleBrand;
-    float exShowroomPrice;
     int numberOfSeats;
-    float tax;
-    float insuranceAmount;
-    enum CarTypes carTypes;
-
+    enum class CarTypes carTypes;
 public:
     Car() = default;
     Car(const Car &obj) = default;
-    Car(int chasNumber, std::string brand, float showroomPrice, int seats, float tax, float insureAmount, enum CarTypes types);
-    void setDetails(int chasNumber, std::string brand, float showroomPrice, int seats, float tax, float insureAmount);
+    Car(int chasNumber, std::string brand, float showroomPrice, float tax, float insureAmount, int seats, enum class CarTypes types);
     ~Car();
     void getDetails(int chasNumber);
-    void setCarTypes(enum CarTypes);
+    void setCarTypes(enum class CarTypes);
     std::string getCarTypes();
-    float getTax() const { return tax; }
+
     int getNumberOfSeats() const { return numberOfSeats; }
-    float getExShowroomPrice() const { return exShowroomPrice; }
-    std::string getVehicleBrand() const { return vehicleBrand; }
-    int getChassisNumber() const { return chassisNumber; }
-    float getInsuranceAmount() const { return insuranceAmount; }
+    void setNumberOfSeats(int numberOfSeats_) { numberOfSeats = numberOfSeats_; }
 };
 
 #endif // CAR_H
