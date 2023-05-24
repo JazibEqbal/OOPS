@@ -9,7 +9,7 @@ public:
     Complex()=default;
     Complex(double r, double img);
     Complex operator+(Complex &c1);
-    friend Complex operator+(Complex &c1, Complex &c2);
+    //friend Complex operator+(Complex &c1, Complex &c2);
     Complex operator-(Complex &c1);
     Complex operator*(Complex &c1);
     Complex operator/(Complex &c1);
@@ -29,20 +29,19 @@ Complex::Complex(double r, double img) : real{r}, imaginary{img} {}
 Complex Complex::operator+(Complex &c1)
 {
     Complex temp;
-    temp.real = real + c1.real;
-    temp.imaginary = imaginary + c1.imaginary;
-    std::cout << "operator + called here\n";
+    temp.real = this->real + c1.real;
+    temp.imaginary = this->imaginary + c1.imaginary;
     return temp;
 };
 
 // FRIEND function overloading OPERATOR +
-Complex operator+(Complex &c1, Complex &c2)
-{
-    Complex temp;
-    temp.real= c1.real + c2.real;
-    temp.imaginary = c1.imaginary + c2.imaginary;
-    return temp;
-}
+// Complex operator+(Complex &c1, Complex &c2)
+// {
+//     Complex temp;
+//     temp.real= c1.real + c2.real;
+//     temp.imaginary = c1.imaginary + c2.imaginary;
+//     return temp;
+// }
 //OPERATOR -
 Complex Complex::operator-(Complex &c1){
     Complex temp;
@@ -124,7 +123,7 @@ int main()
     //c1.printValues();
     Complex c2(7, 8);
     //c2.printValues();
-    Complex c3 = -c1;
+    Complex c3 = c1+c2;
     //c3.printValues();
     std::cout<<c3;
     // Complex c4;
