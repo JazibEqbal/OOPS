@@ -41,8 +41,15 @@ Constructor::Constructor(Constructor &mo):x{std::move(mo.x)}, y{std::move(mo.y)}
 int main(){
     Constructor c2;
     Constructor c(1,2);
-    Constructor c1=c;
+    Constructor c1=c; 
     //uses copy assignement assignment c1=c;
     Constructor d= std::move(c);
     return 0;
 }
+
+/*
+ Employee obj = new Employee(1,"2")  // obj variable --we are taking ownership of the data
+
+ Employee(1,"2"); --- constructor return type is the name of the class -- a temporary value --
+ when you call a constructor a temporary value is returned so someone has to accept that temporary value
+*/

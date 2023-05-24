@@ -9,9 +9,12 @@ After discussion among major stakeholders, following major business requirements
 
 Your code solution should include the following features
  
-    • There should be a provision to store Chassis Number, Vehicle Brand, Ex-Showroom price, amongst other essential features of vehicles such as number of seats, tax and insurance amount, etc. 
+    • There should be a provision to store Chassis Number, Vehicle Brand, Ex-Showroom price, 
+      amongst other essential features of vehicles such as number of seats, tax and insurance amount, etc. 
 
-    • System should allow creation of new records(objects) for particular categories and must allow storage of records in a common collection (array) called "inventory". (Hint: Consider creating an array of the Parent Class and store pointers to objects created in this array).
+    • System should allow creation of new records(objects) for particular categories and 
+      must allow storage of records in a common collection (array) called "inventory". 
+      (Hint: Consider creating an array of the Parent Class and store pointers to objects created in this array).
 
     • System should include functionalities (functions) 
         ◦ To get details about a vehicle by passing the Chassis Number of the vehicle.

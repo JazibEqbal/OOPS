@@ -1,5 +1,6 @@
 #ifndef BIKE_H
 #define BIKE_H
+#include "BikeTypes.h"
 #include<iostream>
 #include "BikeTypes.h"
 #include "Vehicle.h"
