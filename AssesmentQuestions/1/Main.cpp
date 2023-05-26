@@ -26,7 +26,7 @@
 //     }
 // };
 
-Car *inventory[2];
+Vehicle *inventory[2];
 //Bike *bikeInventory[2];
 
 void getDetailsByChesisNumber(int number){
@@ -72,8 +72,8 @@ void deleteMemory(){
 
 int main()
 {
-    Car *c1 = new Car(1, "b", 23, 220, 29, 4, CarTypes::SUV);
-    Car *c2 = new Car(2, "aa", 43, 120, 9, 34, CarTypes::HATCHBACK);
+    Vehicle *c1 = new Car(1, "b", 23, 220, 29, 4, CarTypes::SUV);
+    Vehicle *c2 = new Bike(2, "aa", 43, 120, 9, BikeTypes::COMMUTE);
     // Bike *b1 = new Bike(3, "cc", 3, 1220, 91, BikeTypes::COMMUTE);
     // Bike *b2 = new Bike(4, "dd", 11, 10, 1, BikeTypes::SPORTS);
 

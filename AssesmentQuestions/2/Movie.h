@@ -11,24 +11,16 @@ private:
     std::string movieDirector;
     enum Rating movieRating;
     int movieRunTime;
-    std::string castMembers[20];
+    std::string* castMembers;
     int totalNumberOfSeats;
 public:
-    Movie();
+    Movie(std::string *cast);
     ~Movie();
 
-    
+    std::string* getCastMembers() const { return castMembers; }
+    void setCastMembers(std::string* castMembers_) { castMembers = castMembers_; }
 
-    // std::string* getCastMembers() const {
-    //     return castMembers;
-    // }
-    // void setCastMembers(std::string* members){
-    //     for(int i=0;i<20;i++){
-    //         castMembers[i] = members[i];
-    //     }
-    // };
-   // void setCastMembers(std::string *castMembers_) { castMembers = castMembers_; }
-    
+    friend std::ostream &operator<<(std::ostream &os, const Movie &rhs);
 };
 
 #endif // MOVIE_H
