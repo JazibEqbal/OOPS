@@ -1,7 +1,7 @@
 #ifndef RATING_H
 #define RATING_H
 
-enum Rating{
+enum class Rating{
     U,
     UA,
     R,

@@ -1,20 +1,45 @@
 #include "Movie.h"
 
-Movie::Movie(std::string *members) :castMembers{members}{
-}
+Movie::Movie(std::string name, std::string id, std::string director, Rating rating, int time, std::string *cast, int seats)
+  : movieName{name}, movieId{id}, movieDirector{director}, movieRating{rating}, movieRunTime{time}, castMembers{cast}, totalNumberOfSeats{seats} {}
 
 Movie::~Movie()
 {
-    std::cout<<"des\n";
+    std::cout<<"Movie destroyed\n";
+}
+
+// void Movie::getDetails(std::string *casts, int n){
+//     std::cout<<"Movie Id: "<<getMovieId()<<"\n";
+//     std::cout<<"Movie Name: "<<getMovieName()<<"\n";
+//     std::cout<<"Movie Director: "<<getMovieDirector()<<"\n";
+//     std::cout<<"Movie Rating: "<<getMovieName()<<"\n";
+//     std::cout<<"Movie Run Time: "<<getMovieRunTime()<<"\n";
+//     std::cout<<"Total no of seats: "<<getTotalNumberOfSeats()<<"\n";
+//     std::cout<<"Movie Casts: \n";
+//     for(int i=0;i<n;i++){
+//         std::cout<<i+1<<". "<<casts[i]<<"\n";
+//     }
+// }
+
+std::string displayEnum( enum class Rating movieRating){
+    if(movieRating == Rating::A){
+        return "A";
+    } else if(movieRating == Rating::R){
+        return "R";
+    } else if(movieRating == Rating::U){
+        return "U";
+    }else{
+        return "UA";
+    }
 }
 
 std::ostream &operator<<(std::ostream &os, const Movie &rhs) {
-    os << "movieName: " << rhs.movieName
-       << " movieId: " << rhs.movieId
-       << " movieDirector: " << rhs.movieDirector
-       << " movieRating: " << rhs.movieRating
-       << " movieRunTime: " << rhs.movieRunTime
-       << " castMembers: " << *rhs.castMembers
-       << " totalNumberOfSeats: " << rhs.totalNumberOfSeats;
+    os << "Movie Name: " << rhs.movieName<<"\n"
+       << "Movie Id: " << rhs.movieId<<"\n"
+       << "Movie Director: " << rhs.movieDirector<<"\n"
+       << "Movie Rating: " <<displayEnum(rhs.movieRating)<<"\n"
+       << "Movie RunTime: " << rhs.movieRunTime<<"\n"
+       << "Cast Members: " << *rhs.castMembers<<"\n"
+       << "Total Number Of Seats: " << rhs.totalNumberOfSeats<<"\n";
     return os;
 }
