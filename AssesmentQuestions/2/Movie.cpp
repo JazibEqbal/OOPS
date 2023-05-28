@@ -1,7 +1,10 @@
 #include "Movie.h"
 
-Movie::Movie(std::string name, std::string id, std::string director, Rating rating, int time, std::string *cast, int seats)
-  : movieName{name}, movieId{id}, movieDirector{director}, movieRating{rating}, movieRunTime{time}, castMembers{cast}, totalNumberOfSeats{seats} {}
+Movie::Movie(std::string name, std::string id, std::string director,enum class Rating rating, int time, std::string *cast, int seats)
+  : movieName{name}, movieId{id}, movieDirector{director}, movieRunTime{time}, totalNumberOfSeats{seats} {
+    this->castMembers = cast;
+    this->movieRating = rating;
+  }
 
 Movie::~Movie()
 {
@@ -39,7 +42,10 @@ std::ostream &operator<<(std::ostream &os, const Movie &rhs) {
        << "Movie Director: " << rhs.movieDirector<<"\n"
        << "Movie Rating: " <<displayEnum(rhs.movieRating)<<"\n"
        << "Movie RunTime: " << rhs.movieRunTime<<"\n"
-       << "Cast Members: " << *rhs.castMembers<<"\n"
-       << "Total Number Of Seats: " << rhs.totalNumberOfSeats<<"\n";
+       << "Total Number Of Seats: " << rhs.totalNumberOfSeats<<"\n"
+       << "Cast Members: \n";
+       for(int i=0;i<3;i++){
+        os << rhs.castMembers[i]<<"\n";
+    };
     return os;
 }

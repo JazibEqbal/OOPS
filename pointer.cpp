@@ -7,5 +7,5 @@ int main(){
     std::cout<<*ptr<<"\n"; //with * prints value inside it
     std::cout<<ptr<<"\n";  // without * prints address where x is stored
     delete ptr;
-    return 0;
+    return 0; 
 }
