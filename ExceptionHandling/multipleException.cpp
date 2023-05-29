@@ -3,15 +3,18 @@
 void fun(int a,int b){
     try
     {
-        if(b==0) throw 
+        if(b==0) throw 'a';
     }
-    catch(const std::exception& e)
+    catch(int e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << "here" << '\n';
     }
-    
+    catch(...){
+        std::cout<<"String\n";
+    }
 }
 
 int main(){
+    fun(3,0);
     return 0;
 }

@@ -8,8 +8,10 @@ std::string *casts;
 
 void bookTicket(std::string name, int showTimings) noexcept(false)
 {
+    bool flag=false;
     for (auto it : movie){
         if (it->getMovieName() == name){
+            flag=true;
             if (it->getTotalNumberOfSeats() > 0){
                 std::cout<<"Total Number of seats left: "<<it->getTotalNumberOfSeats()<<"\n";
                 std::cout << "Enter number of seats you want to book ";
@@ -46,21 +48,23 @@ void bookTicket(std::string name, int showTimings) noexcept(false)
                     std::cerr << e.what() << '\n';
                 }
             }
-        } if(name != it->getMovieName()){
-            std::cout<<"No movie found with name "<<name<<"\n";
         }
     }
+    if(flag== false)
+        std::cout<<"No movie found with name "<<name<<"\n";
 }
 
 void getMovieDetails(std::string id){
+    bool flag = false;
     for(auto it: movie){
         if(id == it->getMovieId()){
+            flag = true;
             std::cout<<*it<<"\n";
-        }else{
-            std::cout<<"No movie found with name "<<id<<"\n";
         }
     }
-    //std::cout<<"No movie found with Id "<<id<<"\n";
+    if(flag == false){
+        std::cout<<"No movie found with name "<<id<<"\n";
+    }
 }
 
 int main()
